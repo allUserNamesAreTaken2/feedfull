@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_nav_graph"
+    app:startDestination="@id/home">
+
+    <fragment
+        android:id="@+id/home"
+        android:name="com.shivam.deliveryapp.home"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_home_to_additems"
+            app:destination="@id/additems" />
+    </fragment>
+    <fragment
+        android:id="@+id/needs"
+        android:name="com.shivam.deliveryapp.needs"
+        android:label="fragment_needs"
+        tools:layout="@layout/fragment_needs" />
+    <fragment
+        android:id="@+id/profile"
+        android:name="com.shivam.deliveryapp.profile"
+        android:label="fragment_profile"
+        tools:layout="@layout/fragment_profile" />
+    <fragment
+        android:id="@+id/volunteer"
+        android:name="com.shivam.deliveryapp.volunteer"
+        android:label="fragment_volunteer"
+        tools:layout="@layout/fragment_volunteer" />
+    <activity
+        android:id="@+id/loginPage"
+        android:name="com.shivam.deliveryapp.LoginPage"
+        android:label="activity_login_page"
+        tools:layout="@layout/activity_login_page" />
+    <fragment
+        android:id="@+id/additems"
+        android:name="com.shivam.deliveryapp.additems"
+        android:label="fragment_additems"
+        tools:layout="@layout/fragment_additems" >
+        <action
+            android:id="@+id/action_additems_to_home2"
+            app:destination="@id/home" />
+    </fragment>
+    <fragment
+        android:id="@+id/ngopagefragment"
+        android:name="com.shivam.deliveryapp.BlankFragment"
+        android:label="fragment_blank"
+        tools:layout="@layout/fragment_blank" />
+</navigation>

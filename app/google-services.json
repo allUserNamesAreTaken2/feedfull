@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "470005031661",
+    "firebase_url": "https://deliveryapp-fd9c8.firebaseio.com",
+    "project_id": "deliveryapp-fd9c8",
+    "storage_bucket": "deliveryapp-fd9c8.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:470005031661:android:521da1362b6987652222e4",
+        "android_client_info": {
+          "package_name": "com.shivam.deliveryapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "470005031661-fr221bfkp22j3o1204j7lbiqrgq4v4g2.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCCQ5BRzKhtfR7Q-mpOY0Fpz3SERIkW7-8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "470005031661-fr221bfkp22j3o1204j7lbiqrgq4v4g2.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
