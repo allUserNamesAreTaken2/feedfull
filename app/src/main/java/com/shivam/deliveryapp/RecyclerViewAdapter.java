@@ -14,7 +14,6 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.constraintlayout.widget.ConstraintLayout;
-import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
@@ -56,13 +55,6 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
 
             }
         });
-        holder.targetButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                Navigation.findNavController(v).navigate(R.id.action_home_to_additems);
-}
-        });
 
     }
 
@@ -76,13 +68,12 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
         TextView targetText;
         ImageView targetImage;
         ProgressBar targetProgress;
-        Button targetButton;
         ConstraintLayout parentContext;
 
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
-            targetButton=itemView.findViewById(R.id.contributeTargetbutton);
+
             targetImage=itemView.findViewById(R.id.imageOfTargets);
             targetProgress=itemView.findViewById(R.id.targetProgressBar);
             targetText=itemView.findViewById(R.id.targetTextView);

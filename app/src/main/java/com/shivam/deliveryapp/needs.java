@@ -32,6 +32,7 @@ public class needs extends Fragment {
     ArrayList<String> mngoname=new ArrayList<>();
     ArrayList<String> mitemneed=new ArrayList<>();
     ArrayList<String>mitemneedesc=new ArrayList<>();
+    ArrayList<String>mitemId=new ArrayList<>();
     ProgressBar progressBar;
 
     RecyclerView needrecyclerview;
@@ -73,9 +74,10 @@ public class needs extends Fragment {
             mitemneed.add(dataSnapshot.child("itemname").getValue().toString());
             mitemneedesc.add(dataSnapshot.child("itemdesc").getValue().toString());
             mngoname.add(dataSnapshot.child("ngoname").getValue().toString());
+            mitemId.add(dataSnapshot.getKey());
 
 
-            NeedRecyclerAdapter needRecyclerAdapter=new NeedRecyclerAdapter(getContext(),mngoname,mitemneed,mitemneedesc);
+            NeedRecyclerAdapter needRecyclerAdapter=new NeedRecyclerAdapter(getContext(),mngoname,mitemneed,mitemneedesc,mitemId);
             needrecyclerview.setAdapter(needRecyclerAdapter);
             needrecyclerview.setLayoutManager(new LinearLayoutManager(getContext()));
             progressBar.setVisibility(View.INVISIBLE);

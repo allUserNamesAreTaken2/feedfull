@@ -24,11 +24,6 @@
         android:name="com.shivam.deliveryapp.profile"
         android:label="fragment_profile"
         tools:layout="@layout/fragment_profile" />
-    <fragment
-        android:id="@+id/volunteer"
-        android:name="com.shivam.deliveryapp.volunteer"
-        android:label="fragment_volunteer"
-        tools:layout="@layout/fragment_volunteer" />
     <activity
         android:id="@+id/loginPage"
         android:name="com.shivam.deliveryapp.LoginPage"
@@ -48,4 +43,9 @@
         android:name="com.shivam.deliveryapp.BlankFragment"
         android:label="fragment_blank"
         tools:layout="@layout/fragment_blank" />
+    <fragment
+        android:id="@+id/donated"
+        android:name="com.shivam.deliveryapp.donated"
+        android:label="fragment_donated"
+        tools:layout="@layout/fragment_donated" />
 </navigation>

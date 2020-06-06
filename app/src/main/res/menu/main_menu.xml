@@ -22,7 +22,7 @@
         android:id="@+id/profile"
         />
     <item
-        android:id="@+id/volunteer"
-        android:icon="@drawable/ic_pan_tool_black_24dp"
-        android:title="NGO" />
+        android:id="@+id/donated"
+        android:icon="@drawable/ic_baseline_clear_all_24"
+        android:title="Donated" />
 </menu>

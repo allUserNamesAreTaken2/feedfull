@@ -20,14 +20,11 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
-import com.firebase.ui.auth.AuthUI;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -67,7 +64,8 @@ public class profile extends Fragment {
     TextView personNamee;
     RecyclerView profilerecyclerView;
     ProgressBar progressBar;
-    Button signout;
+
+    TextView editprofile;
 
 
 
@@ -163,9 +161,10 @@ public class profile extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
        View v= inflater.inflate(R.layout.fragment_profile, container, false);
-        signout=v.findViewById(R.id.signoutbutton);
+
        profilepic=v.findViewById(R.id.profilepicc);
        personNamee=v.findViewById(R.id.personName);
+       editprofile=v.findViewById(R.id.textView8);
 
 
         profilerecyclerView=v.findViewById(R.id.profileRecycler);
@@ -187,7 +186,6 @@ public class profile extends Fragment {
             if(user.getDisplayName() !=null){
                 personNamee.setText(user.getDisplayName());
            }
-            Log.i("anditssssss",user.getDisplayName());
 
             if(user.getPhotoUrl() != null){
                 try{
@@ -197,8 +195,6 @@ public class profile extends Fragment {
 
                 }
             }
-
-            Log.i("message" ,"user logged in");
         }
         else{
 
@@ -209,24 +205,6 @@ public class profile extends Fragment {
 
 
 
-       signout.setOnClickListener(new Button.OnClickListener() {
-           @Override
-           public void onClick(View v) {
-
-                   // [START auth_fui_signout]
-                   AuthUI.getInstance()
-                           .signOut(getContext())
-                           .addOnCompleteListener(new OnCompleteListener<Void>() {
-                               public void onComplete(@NonNull Task<Void> task) {
-                                   Intent intent=new Intent(getContext(),the_main_screen.class);
-                                   startActivity(intent);
-                                   Toast.makeText(getContext(),"signed out",Toast.LENGTH_LONG).show();
-                               }
-                           });
-                   // [END auth_fui_signout]
-
-           }
-       });
 
 
         profilepic.setOnClickListener(new ImageView.OnClickListener() {
@@ -237,6 +215,14 @@ public class profile extends Fragment {
                 } else {
                     getPhoto();
                 }
+            }
+        });
+
+        editprofile.setOnClickListener(new TextView.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent(getContext(),editprofile.class);
+                startActivity(intent);
             }
         });
 

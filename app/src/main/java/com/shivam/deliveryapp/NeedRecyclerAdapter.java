@@ -1,6 +1,7 @@
 package com.shivam.deliveryapp;
 
 import android.content.Context;
+import android.content.Intent;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -19,13 +20,15 @@ public class NeedRecyclerAdapter extends RecyclerView.Adapter<NeedRecyclerAdapte
     ArrayList<String> mngoname=new ArrayList<>();
     ArrayList<String> mitemneed=new ArrayList<>();
     ArrayList<String>mitemneedesc=new ArrayList<>();
+    ArrayList<String>mItemId=new ArrayList<>();
 
 
-    public NeedRecyclerAdapter(Context mcontext, ArrayList<String> mngoname,ArrayList<String> mitemneed,ArrayList<String>mitemneedesc){
+    public NeedRecyclerAdapter(Context mcontext, ArrayList<String> mngoname,ArrayList<String> mitemneed,ArrayList<String>mitemneedesc,ArrayList<String>mItemId){
         this.mcontext = mcontext;
         this.mngoname=mngoname;
         this.mitemneed=mitemneed;
         this.mitemneedesc=mitemneedesc;
+        this.mItemId=mItemId;
     }
 
     @NonNull
@@ -38,10 +41,20 @@ public class NeedRecyclerAdapter extends RecyclerView.Adapter<NeedRecyclerAdapte
     }
 
     @Override
-    public void onBindViewHolder(@NonNull NeedViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull final NeedViewHolder holder, final int position) {
         holder.descngo.setText(mitemneedesc.get(position));
         holder.itemneed.setText(mitemneed.get(position));
         holder.namengo.setText(mngoname.get(position));
+        holder.layout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent(v.getContext(),contributeNeeds.class);
+                intent.putExtra("itemid",mItemId.get(position));
+                intent.putExtra("itemname",mitemneed.get(position));
+                intent.putExtra("itemdesc",mitemneedesc.get(position));
+                v.getContext().startActivity(intent);
+            }
+        });
 
     }
 

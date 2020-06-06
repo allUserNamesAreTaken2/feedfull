@@ -15,8 +15,6 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.Arrays;
 import java.util.List;
@@ -47,7 +45,7 @@ public class signInFG extends AppCompatActivity {
                 AuthUI.getInstance()
                         .createSignInIntentBuilder()
                       .setTheme(R.style.AppTheme)
-                        .setLogo(R.drawable.ahahahah)
+                        .setLogo(R.drawable.dpdp)
                         .setAvailableProviders(providers)
                         .build(),
                 RC_SIGN_IN);
@@ -71,26 +69,8 @@ public class signInFG extends AppCompatActivity {
                 FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
 
 
-                FirebaseDatabase firebaseDatabase=FirebaseDatabase.getInstance();
-                DatabaseReference reference=firebaseDatabase.getReference();
-                try {
-
-                    reference.child("users").child(user.getUid()).child("userinfo").child("useras").setValue("user");
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
-
-
-                if(user.getMetadata().getLastSignInTimestamp()==user.getMetadata().getCreationTimestamp())
-                {
                     Intent intent=new Intent(this,the_main_screen.class);
                     startActivity(intent);
-
-                }else{
-                    Intent intent=new Intent(this,detailsofuser.class);
-                    startActivity(intent);
-
-                }
 
                 Toast.makeText(getApplicationContext(),"Signed In",Toast.LENGTH_LONG).show();
                 finish();
@@ -108,18 +88,6 @@ public class signInFG extends AppCompatActivity {
 
 
 
-    public void delete() {
-        // [START auth_fui_delete]
-        AuthUI.getInstance()
-                .delete(this)
-                .addOnCompleteListener(new OnCompleteListener<Void>() {
-                    @Override
-                    public void onComplete(@NonNull Task<Void> task) {
-                        // ...
-                    }
-                });
-        // [END auth_fui_delete]
-    }
 
 
 

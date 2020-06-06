@@ -12,10 +12,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.MaterialComponents.Light.NoActionBar">
-        <activity android:name=".addneedngo"></activity>
-        <activity android:name=".ngoregn" />
-        <activity android:name=".ngoView" />
-        <activity android:name=".detailsofuser" />
+        <activity android:name=".editprofile"></activity>
+        <activity android:name=".contributeNeeds" />
         <activity android:name=".signInFG" />
         <activity android:name=".the_main_screen" />
         <activity android:name=".MainActivity">
